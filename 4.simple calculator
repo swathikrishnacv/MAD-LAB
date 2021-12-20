@@ -1,0 +1,305 @@
+Activity.Xml
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/Button1"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    tools:context="com.example.student.project5.MainActivity">
+
+    <EditText
+
+        android:id="@+id/edittext1"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="8dp"
+
+        android:layout_marginStart="8dp"
+
+        android:layout_marginTop="68dp"
+
+        android:ems="10"
+
+        android:inputType="number"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.562"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+
+        android:id="@+id/edittext"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="8dp"
+
+        android:layout_marginEnd="8dp"
+
+        android:layout_marginStart="8dp"
+
+        android:layout_marginTop="56dp"
+
+        android:ems="10"
+
+        android:inputType="number"
+
+        app:layout_constraintBottom_toTopOf="@+id/button"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.503"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/edittext1"
+
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+
+        android:id="@+id/button"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="52dp"
+
+        android:layout_marginEnd="148dp"
+
+        android:layout_marginStart="148dp"
+
+        android:layout_marginTop="68dp"
+
+        android:onClick="add"
+
+        android:text="add"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/edittext" />
+
+    <Button
+
+        android:id="@+id/button2"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="224dp"
+
+        android:layout_marginEnd="8dp"
+
+        android:layout_marginStart="8dp"
+
+        android:onClick="sub"
+
+        android:text="sub"
+
+        app:layout_constraintBottom_toBottomOf="@+id/edittext2"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+
+        android:id="@+id/button3"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="52dp"
+
+        android:layout_marginBottom="156dp"
+
+        android:layout_marginEnd="8dp"
+
+        android:layout_marginStart="8dp"
+
+        android:onClick="mul"
+
+        android:text="mul"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+
+        android:id="@+id/button4"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="40dp"
+
+        android:layout_marginEnd="8dp"
+
+        android:layout_marginStart="8dp"
+
+        android:onClick="div"
+
+        android:text="div"
+
+        app:layout_constraintBottom_toTopOf="@+id/edittext2"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+
+        android:id="@+id/edittext2"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="28dp"
+
+        android:layout_marginEnd="8dp"
+
+        android:layout_marginStart="8dp"
+
+        android:ems="10"
+
+        android:inputType="number"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.503"
+
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
+
+Mainactivity
+
+package com.example.student.project5;
+
+import android.support.v7.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+import android.view.View;
+
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+
+    protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+
+    }
+
+    public void add(View v)
+
+    {
+
+        EditText et1=(EditText)findViewById(R.id.edittext);
+
+        EditText et2=(EditText)findViewById(R.id.edittext1);
+
+        EditText et3=(EditText)findViewById(R.id.edittext2);
+
+        int n1=Integer.parseInt(et1.getText().toString());
+
+        int n2=Integer.parseInt(et2.getText().toString());
+
+        int result=n1+n2;
+
+        et3.setText("total value"+result);
+
+    }
+
+    public void sub(View v)
+
+    {
+
+        EditText et1=(EditText)findViewById(R.id.edittext);
+
+        EditText et2=(EditText)findViewById(R.id.edittext1);
+
+        EditText et3=(EditText)findViewById(R.id.edittext2);
+
+        int n1=Integer.parseInt(et1.getText().toString());
+
+        int n2=Integer.parseInt(et2.getText().toString());
+
+        int result=n1-n2;
+
+        et3.setText("subtract value"+result);
+
+    }
+
+    public void mul(View v)
+
+    {
+
+        EditText et1=(EditText)findViewById(R.id.edittext);
+
+        EditText et2=(EditText)findViewById(R.id.edittext1);
+
+        EditText et3=(EditText)findViewById(R.id.edittext2);
+
+        int n1=Integer.parseInt(et1.getText().toString());
+
+        int n2=Integer.parseInt(et2.getText().toString());
+
+        int result=n1*n2;
+
+        et3.setText("multiply value"+result);
+
+    }
+
+    public void div(View v)
+
+    {
+
+        EditText et1=(EditText)findViewById(R.id.edittext);
+
+        EditText et2=(EditText)findViewById(R.id.edittext1);
+
+        EditText et3=(EditText)findViewById(R.id.edittext2);
+
+        int n1=Integer.parseInt(et1.getText().toString());
+
+        int n2=Integer.parseInt(et2.getText().toString());
+
+        int result=n1/n2;
+
+        et3.setText("division value"+result);
+
+    }
+
+}
